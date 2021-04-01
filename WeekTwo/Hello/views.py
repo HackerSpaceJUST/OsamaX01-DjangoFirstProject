@@ -1,0 +1,12 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def index(requst):
+    return HttpResponse("Hello World!")
+
+def Hackerspace(requst):
+    return HttpResponse('Hello Hackerspace! xD')
+
+def GeneralName(requst, name):
+    return HttpResponse(f'Hello {name.capitalize()}!')
