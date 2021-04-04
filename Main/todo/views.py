@@ -5,9 +5,9 @@ from django.urls import reverse
 
 
 tasks = []
-
+# db light
 class NewTaskForm(forms.Form):
-    task = forms.CharField(label = "New Task")
+    task = forms.CharField(label = "New Task", max_length = 5)
 
 def index(request):
     return render(request, 'todo/index.html', {
