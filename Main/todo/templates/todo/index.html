@@ -1,14 +1,14 @@
 {% extends "todo/layout.html" %}
 
 {% block body %}
-    <h3> Items in List: </h3>
-    <ul>
+    <h1 class="badge bg-secondary" style="margin : 15px; width: 150px;" role="alert"> Items in List: </h1>
+    <ul id = "grid">
         {% for task in tasks %} 
-            <li> {{task}} </li>
+            <li class="grid class"> {{task}} </li>
         {% empty %}
-            <div class = "Normal"> No Items Yet </div>
+            <li class ="grid class"> No Items Yet </li>
         {% endfor %}
     </ul>
-    <a href = "{% url 'todo:add' %}"> Add Task </a>
+    <a href = "{% url 'todo:add' %}" class="badge bg-secondary" style="margin : 15px; width: 150px;" role="alert"> Add Task </a>
 
 {% endblock %}
