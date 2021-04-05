@@ -5,6 +5,8 @@
     <ul>
         {% for task in tasks %} 
             <li> {{task}} </li>
+        {% empty %}
+            <div class = "Normal"> No Items Yet </div>
         {% endfor %}
     </ul>
     <a href = "{% url 'todo:add' %}"> Add Task </a>
