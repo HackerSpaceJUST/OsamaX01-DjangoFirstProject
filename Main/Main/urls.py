@@ -23,4 +23,5 @@ urlpatterns = [
     path('birthday/', include('birthday.urls')),
     path('birthdaychecker/', include('birthdaychecker.urls')),
     path('todo/', include('todo.urls')),
+    path('flights/', include('flights.urls')),
 ]

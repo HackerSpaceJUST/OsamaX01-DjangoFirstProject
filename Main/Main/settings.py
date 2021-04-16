@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'birthday',
     'birthdaychecker',
     'todo',
+    'flights',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

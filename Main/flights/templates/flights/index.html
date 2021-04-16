@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Flights </title>
+    </head>
+    <body>
+        <h1> Flights: </h1>
+        <ul>
+            {% for f in AllFlights %}
+                <li> 
+                    <a href= "{% url 'flights:single' f.id %}">
+                     {{f.origin}} to {{f.destination}} 
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
