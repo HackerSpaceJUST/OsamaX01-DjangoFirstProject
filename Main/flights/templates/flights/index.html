@@ -11,6 +11,8 @@
                     <a href= "{% url 'flights:single' f.id %}">
                      {{f.origin}} to {{f.destination}} 
                 </li>
+            {% empty %}
+                <li> No Flights For Today </li>
             {% endfor %}
         </ul>
     </body>

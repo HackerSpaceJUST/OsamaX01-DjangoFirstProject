@@ -6,7 +6,9 @@ from django.urls import reverse
 from . import urls
 
 def index(request):
-    return render(request, 'flights/index.html', {'AllFlights' : Flight.objects.all()} )
+    return render(request, 'flights/index.html', {
+         'AllFlights' : Flight.objects.all()
+     })
 
 
 def single(request, flightID):
