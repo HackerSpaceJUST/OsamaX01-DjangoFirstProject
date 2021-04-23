@@ -9,6 +9,14 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+#### Enviroment Variabels
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+#########################
 
 from pathlib import Path
 
@@ -20,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l66h4lqi!f3pm&q6e1o0owk7j-4ylnnle22pya1h_x@@1543*@'
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,8 +90,12 @@ WSGI_APPLICATION = 'Main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
     }
 }
 
