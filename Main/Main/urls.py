@@ -25,4 +25,7 @@ urlpatterns = [
     path('birthdaychecker/', include('birthdaychecker.urls')),
     path('todo/', include('todo.urls')),
     path('flights/', include('flights.urls')),
+
+    #REST_FRAMEWORK 
+    path('api/flights/', include('flights.api.urls'))
 ]
