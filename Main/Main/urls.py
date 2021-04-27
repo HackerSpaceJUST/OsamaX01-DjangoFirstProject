@@ -27,5 +27,6 @@ urlpatterns = [
     path('flights/', include('flights.urls')),
 
     #REST_FRAMEWORK 
-    path('api/flights/', include('flights.api.urls'))
+    path('api/flights/', include('flights.api.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
