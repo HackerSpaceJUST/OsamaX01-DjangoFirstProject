@@ -12,4 +12,10 @@
     <input type = "password" name = "password" placeholder = "Password">
     <input type = "submit" value = "Login">
 </form>
+
+<p> 
+    if you don't have account 
+    <a href = "{% url 'users:register' %}"> Register </a>
+</p>
+
 {% endblock %}
