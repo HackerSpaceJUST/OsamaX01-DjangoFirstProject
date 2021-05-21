@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "eng">
+    <head>
+        <title> Hello JavaScript </title>
+        <script>
+            function hello() {
+                const h1_holder = document.querySelector('h1');
+                if(h1_holder.innerHTML === 'Hello JavaScript!') {
+                    h1_holder.innerHTML = 'GoodBye!';
+                } 
+                else {
+                    h1_holder.innerHTML = 'Hello JavaScript!';
+                }
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').onsubmit = function() {
+                    const name = document.querySelector('#name').value;
+                    alert(`Hello, ${name}!`);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <h1> Hello JavaScript! </h1>
+        <form>
+            <input autofocus id = "name" placeholder = "Name" type = "text">
+            <input type = "submit">
+        </form>
+
+        <br>
+        <button onclick = "hello()"> Click here </button> <br>
+    </body>
+</html>
